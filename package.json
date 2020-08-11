@@ -1,0 +1,21 @@
+{
+  "name": "user-register-redis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": "https://github.com/evandroduarte/UserRegisterRedis.git",
+  "author": "Evandro Duarte <duarte.evandro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.11",
+    "password-generator": "^2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "sucrase": "^3.15.0"
+  }
+}
