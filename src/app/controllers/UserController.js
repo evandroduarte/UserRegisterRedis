@@ -1,5 +1,6 @@
 const passwordGenerator = require('password-generator');
 const mailer = require('../lib/Mail');
+const Queue = require('../lib/Queue');
 
 module.exports = {
     async store(req, res){
@@ -16,7 +17,9 @@ module.exports = {
             to: `${name} <${email}>`,
             subject: 'Cadastro de usuário',
             html: `Olá, ${name}, sua senha é ${user.password}`
-        })
+        });
+
+        await Queue.add('RegistrationMail', { user });
 
         return res.json(user);
     }

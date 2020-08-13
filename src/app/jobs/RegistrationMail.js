@@ -1,14 +1,16 @@
 const mail = require('../lib/Mail');
 
-module.exports = {
+export default {
     key: 'RegistrationMail',
     options: {
-
+        delay: 5000,
+        priority: 3
     },
-    async handleRegistration({ data }){
+
+    async handle({ data }){
     const { user } = data;
     
-    await mailer.sendMail({
+    await mail.sendMail({
         from: 'DIO <contato@dio.com.br>',
         to: `${user.name} <${user.email}>`,
         subject: 'Cadastro de usuário',
